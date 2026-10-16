@@ -48,7 +48,7 @@ def sum_view(request):
         n2 = int(request.GET["n2"])
     except ValueError:
         n2 = float(request.GET["n2"])
-    return HttpResponse(f"<p>{json.dumps({'sum': n1 + n2})}</p>")
+    return HttpResponse(f"<p>{json.dumps(n1 + n2)}</p>")
 
 
 
