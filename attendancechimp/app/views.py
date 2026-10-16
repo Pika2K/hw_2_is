@@ -33,6 +33,23 @@ def index(request):
     context = {}
     return render(request, 'app/index.html', context)
 
+def time_view(request):
+    now = datetime.now(zoneinfo.ZoneInfo("America/Chicago"))
+    return HttpResponse(now.strftime("%H:%M"), content_type="text/plain")
+
+def sum_view(request):
+    try:
+        int(request.GET["n1"])
+        n1 = int(request.GET["n1"])
+    except ValueError:
+        n1 = float(request.GET["n1"])
+    try:
+        int(request.GET["n2"])
+        n2 = int(request.GET["n2"])
+    except ValueError:
+        n2 = float(request.GET["n2"])
+    return JsonResponse({"sum": n1 + n2})
+
 
 
 # ---------------------------------------------------------------------------
