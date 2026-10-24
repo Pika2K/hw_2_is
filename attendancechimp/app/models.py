@@ -88,6 +88,7 @@ class Lecture(models.Model):
 # ---------------------------------------------------------------------------
 
 class QRCodeUpload(models.Model):
+    """A photo of a QR code uploaded by a student; the lecture may be empty."""
     student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
     lecture = models.ForeignKey(Lecture, on_delete=models.SET_NULL, null=True, blank=True)
     image = models.FileField(upload_to="qr_uploads/")

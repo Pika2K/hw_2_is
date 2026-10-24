@@ -7,6 +7,17 @@ Setup notes:
 - QRUpload.image is an ImageField, which requires Pillow (pip install Pillow).
 - Model.clean() is not called by save(). ModelForms/admin call it automatically;
   if you create QRUpload objects in a view or serializer, call full_clean() first.
+
+Prompt used:
+Please generate a suitable models.py in django based on the following specifications below.  Make sure the code is suitable for the specifications and do not add addtional features unrelated to the specifications.
+AttendanceChimp Summary
+AttendanceChimp tracks class attendance via QR codes:
+• Users: students and instructors (two roles).
+• Courses: each has one instructor. Students can enroll in multiple courses.
+• Lectures: individual class meetings, each associated with a course.
+• QR Code Uploads: photos uploaded by students, each associated with a student and a
+lecture.
+Design requirements: simple to use, supports attendance analytics, robust to cheating
 """
 import hashlib
 import secrets

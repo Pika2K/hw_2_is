@@ -1,0 +1,5 @@
+For one, the LLM generates basic helper functions for each class such as is_student, is_instructor and even validating functions or string functions.
+It also took many liberties in adding many additional arguments to each class field that are probably useful but adds clutter to the code if not fully understood why they were used.
+The LLM also took liberties in deciding to make a qr_token to support the anti-cheating design requirement of the app as well as a hashing function and image save helper function.
+Overall, the LLM might be more complete on a overall app basis but also more complex due to the addtional field arguments such as limited_to or editable = False, which makes it less easier to 
+implement since these added arguments and functions can in fact stray from the original purpose of the developer if not careful.
